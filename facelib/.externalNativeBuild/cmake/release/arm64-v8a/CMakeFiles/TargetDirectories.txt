@@ -1,0 +1,3 @@
+D:/App/demo/facelib/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/UsbCameraProc.dir
+D:/App/demo/facelib/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/App/demo/facelib/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/rebuild_cache.dir

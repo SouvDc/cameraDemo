@@ -1,0 +1,15 @@
+Executable : D:\android\sdk\cmake\3.6.3155560\bin\cmake.exe
+arguments : 
+-HD:\App\demo\facelib
+-BD:\App\demo\facelib\.externalNativeBuild\cmake\debug\mips
+-DANDROID_ABI=mips
+-DANDROID_PLATFORM=android-19
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\App\demo\facelib\build\intermediates\cmake\debug\obj\mips
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=D:\android\sdk\ndk-bundle
+-DCMAKE_CXX_FLAGS=
+-DCMAKE_TOOLCHAIN_FILE=D:\android\sdk\ndk-bundle\build\cmake\android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=D:\android\sdk\cmake\3.6.3155560\bin\ninja.exe
+-GAndroid Gradle - Ninja
+jvmArgs : 
+

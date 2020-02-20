@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#FF000000"
+              android:orientation="vertical"
+    >
+
+    <jerome.com.usbcamera.UsbCameraView
+        android:id="@+id/usb_camera_view"
+        android:layout_width="640dp"
+        android:layout_height="480dp"/>
+
+
+    <!--<jerome.com.usbcamera.CameraView-->
+        <!--android:id="@+id/usb_camera_view"-->
+        <!--android:layout_width="1280dp"-->
+        <!--android:layout_height="720dp"/>-->
+</LinearLayout>

@@ -1,0 +1,57 @@
+
+{
+	"buildFiles" : [ "D:/App/demo/facelib/CMakeLists.txt" ],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"D:\\android\\sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build D:\\App\\demo\\facelib\\.externalNativeBuild\\cmake\\release\\arm64-v8a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"UsbCameraProc-Release-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "UsbCameraProc",
+			"buildCommand" : "D:\\android\\sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build D:\\App\\demo\\facelib\\.externalNativeBuild\\cmake\\release\\arm64-v8a --target UsbCameraProc",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target aarch64-none-linux-android -gcc-toolchain D:/android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=D:/android/sdk/ndk-bundle/platforms/android-21/arch-arm64 -DUsbCameraProc_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "D:/App/demo/facelib/src/main/cpp/ImageProc.c",
+					"workingDirectory" : "D:/App/demo/facelib/.externalNativeBuild/cmake/release/arm64-v8a"
+				},
+				
+				{
+					"flags" : "  -target aarch64-none-linux-android -gcc-toolchain D:/android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=D:/android/sdk/ndk-bundle/platforms/android-21/arch-arm64 -DUsbCameraProc_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "D:/App/demo/facelib/src/main/cpp/jpegDecode.c",
+					"workingDirectory" : "D:/App/demo/facelib/.externalNativeBuild/cmake/release/arm64-v8a"
+				},
+				
+				{
+					"flags" : "  -target aarch64-none-linux-android -gcc-toolchain D:/android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=D:/android/sdk/ndk-bundle/platforms/android-21/arch-arm64 -DUsbCameraProc_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "D:/App/demo/facelib/src/main/cpp/utils.c",
+					"workingDirectory" : "D:/App/demo/facelib/.externalNativeBuild/cmake/release/arm64-v8a"
+				},
+				
+				{
+					"flags" : "  -target aarch64-none-linux-android -gcc-toolchain D:/android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=D:/android/sdk/ndk-bundle/platforms/android-21/arch-arm64  -DUsbCameraProc_EXPORTS -isystem D:\\android\\sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem D:\\android\\sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\arm64-v8a\\include -isystem D:\\android\\sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "D:/App/demo/facelib/src/main/cpp/UsbCameraProc.cpp",
+					"workingDirectory" : "D:/App/demo/facelib/.externalNativeBuild/cmake/release/arm64-v8a"
+				}
+			],
+			"output" : "D:/App/demo/facelib/build/intermediates/cmake/release/obj/arm64-v8a/libUsbCameraProc.so",
+			"toolchain" : "3806728449"
+		}
+	},
+	"toolchains" : 
+	{
+		"3806728449" : 
+		{
+			"cCompilerExecutable" : "D:/android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "D:/android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

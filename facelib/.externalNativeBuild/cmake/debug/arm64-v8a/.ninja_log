@@ -1,0 +1,8 @@
+# ninja log v5
+5	3740	0	CMakeFiles/UsbCameraProc.dir/src/main/cpp/utils.c.o	9c1b74aa2dc85e6a
+3	3740	0	CMakeFiles/UsbCameraProc.dir/src/main/cpp/jpegDecode.c.o	4f92f308af87c79b
+0	8283	0	CMakeFiles/UsbCameraProc.dir/src/main/cpp/ImageProc.c.o	59e45cfd16514f6f
+4	10647	0	CMakeFiles/UsbCameraProc.dir/src/main/cpp/UsbCameraProc.cpp.o	26c38204ee501a4
+10647	10920	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libUsbCameraProc.so	e699d3bc2a3472b1
+2	99	0	CMakeFiles/UsbCameraProc.dir/src/main/cpp/ImageProc.c.o	59e45cfd16514f6f
+100	151	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libUsbCameraProc.so	e699d3bc2a3472b1

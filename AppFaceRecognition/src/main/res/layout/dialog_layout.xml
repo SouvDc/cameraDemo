@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="#0000"
+              android:layout_width="240dp"
+              android:layout_height="240dp">
+
+    <TextView
+        android:id="@+id/result_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:background="#0000"
+        android:textColor="#ffe9feff"
+        android:textSize="23sp"
+        android:text="Result:60%"
+        />
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_below="@+id/result_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bn9"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Cancel"
+        />
+
+
+
+
+</RelativeLayout>

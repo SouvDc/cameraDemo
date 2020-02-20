@@ -1,0 +1,3 @@
+D:/App/demo/facelib/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/UsbCameraProc.dir
+D:/App/demo/facelib/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/App/demo/facelib/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

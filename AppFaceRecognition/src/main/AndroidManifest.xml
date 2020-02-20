@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.aimall.demo.faceverification"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- 硬件支持 -->
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 将SurfaceView添加到Window的权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:name=".APP"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:theme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${APPLICATION_ID}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN"/>
+
+
+             <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>
+        </activity>
+        <activity android:name=".module.manage.FaceManageActivity"/>
+        <activity android:name=".module.camera.CameraActivity"/>
+        <activity android:name=".module.video.VideoActivity"/>
+        <activity android:name=".module.pic.PicOpActivity"/>
+        <activity android:name=".module.pic.PicCompareActivity"/>
+        <activity android:name=".module.setting.SettingActivity"/>
+        <activity android:name="com.cnbot.facelib.camera.CameraPreviewActivity"/>
+        <activity
+            android:name=".module.camera.CameraServiceActivity"
+            android:label="后台识别">
+        </activity>
+
+        <service android:name=".module.camera.DefaultCameraService"/>
+
+        <activity android:name=".TestActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".usb.UsbActivity"/>
+        <activity android:name=".usb.SystemCameraActivity"/>
+        <activity android:name=".usb.UsbCameraActivity"/>
+        <activity android:name=".usb.MultiCameraPreviewActivity"/>
+        <activity android:name=".usb.MultiUsbCameraActivity"/>
+        <activity android:name=".module.register.FaceRegisterActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".FaceRecordActivity">
+        </activity>
+    </application>
+
+</manifest>

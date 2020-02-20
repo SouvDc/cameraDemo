@@ -1,0 +1,44 @@
+apply from: 'config.gradle'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.tencent.bugly:symtabfileuploader:latest.release'
+        classpath 'com.novoda:bintray-release:+'
+
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven {
+            url 'http://120.77.243.243:8081/repository/AndroidCode/'
+
+        }
+        maven {
+            url "http://dl.bintray.com/glomadrian/maven"
+        }
+        flatDir { dirs '../aar' }
+
+
+    }
+//    gradle.projectsEvaluated {
+//        tasks.withType(JavaCompile) {
+//            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+//        }
+//    }
+}
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

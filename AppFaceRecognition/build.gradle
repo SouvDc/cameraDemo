@@ -1,0 +1,134 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias rootProject.ext.signingConfigs.keyAlias
+            keyPassword rootProject.ext.signingConfigs.keyPassword
+            storePassword rootProject.ext.signingConfigs.storePassword
+            storeFile rootProject.ext.signingConfigs.storeFile
+        }
+    }
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        targetSdkVersion rootProject.ext.android.targerSdkVersion
+        applicationId rootProject.ext.AppFaceRecognition.applicationId
+        minSdkVersion rootProject.ext.AppFaceRecognition.minSdkVersion
+        versionCode rootProject.ext.AppFaceRecognition.versionCode
+        versionName rootProject.ext.AppFaceRecognition.versionName
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+        manifestPlaceholders = [
+                APPLICATION_ID: applicationId
+        ]
+//        ndk {
+//            abiFilters 'armeabi-v7a'
+//        }
+    }
+    dexOptions {
+        jumboMode true
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        pickFirst '**'
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+
+    }
+
+    android {
+        compileOptions {
+            sourceCompatibility 1.8
+            targetCompatibility 1.8
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+}
+
+dependencies {
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '27.0.2'
+                }
+            }
+        }
+    }
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:design:27.0.2'
+    compile 'com.android.support:cardview-v7:27.0.2'
+    compile 'com.android.support:multidex:1.0.1'
+    //ReactiveX
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    compile 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
+    //图片加载
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //ReactiveX
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    compile 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.7.0'
+    //View绑定
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //圆形ImageView
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //ormlite
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    //透明状态栏
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    //gson
+    compile 'com.google.code.gson:gson:2.6.2'
+    //加载动画
+    compile 'com.kaopiz:kprogresshud:1.0.2'
+    compile 'com.google.android.exoplayer:exoplayer-core:r2.4.3'
+    compile 'com.afollestad.material-dialogs:core:0.9.6.0'
+    compile 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    //友盟统计
+    compile 'com.umeng.analytics:analytics:6.1.2'
+    compile 'com.airbnb.android:lottie:2.2.5'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //圆形ImageView
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    //bind
+//    compile(name: 'libFaceRecognition-release', ext: 'aar')
+//    compile(name: 'libTracker-release', ext: 'aar')
+//    compile(name: 'easylib-release', ext: 'aar')
+//    compile 'com.cnbot.facelib:facelib:1.1.1'
+    debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
+    compile project(':facelib')
+}

@@ -1,0 +1,143 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake{
+                cppFlags ""
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        sourceSets.main {
+            jni.srcDirs = []
+//            jniLibs.srcDir "src/main/libs"
+        }
+
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+
+    repositories {
+        flatDir {
+            dirs 'aar'
+        }
+    }
+//防止人脸so库报错
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        pickFirst '**'
+    }
+
+}
+
+dependencies {
+
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '27.0.2'
+                }
+            }
+        }
+    }
+
+
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:runner:1.0.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    compile 'com.android.support:multidex:1.0.1'
+
+    //人脸识别
+//    compile(name: 'libFaceRecognition-release', ext: 'aar')
+//    compile(name: 'libTracker-release', ext: 'aar')
+//    compile(name: 'easylib-release', ext: 'aar')
+    compile 'com.aimall.sdk.faceverification:faceverification:1.0'
+    compile 'com.aimall.multifacetrackerlib:tracker:1.0'
+    compile 'com.face.easylib:easy:1.0'
+}
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://120.77.243.243:8081/repository/AndroidCode/") {
+                authentication(
+                        userName: "admin",
+                        password: "admin123"
+                )
+            }
+
+            pom.project {
+                //如果代码有改动，版本号必须
+                //1.1加入USB摄像头预览
+                //1.1.4
+//                1、创建镜像的Bitmap
+//                2、将相机预览的数组转换为Bitmap
+//                3、后台服务新增动态计算摄像头预览方向
+//                4、新增实时获取当前人脸识别结果的方法
+//                5、新增获取摄像头预览方向的代理方法
+                version '1.1.4'
+                artifactId 'facelib'
+                groupId 'com.cnbot.facelib'
+                packaging 'aar'
+                description '新增方法'
+            }
+        }
+    }
+}
+//将源代码打包进aar
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+
+//    from(project.zipTree('aar/easylib-release.aar'))
+//    from(project.zipTree('aar/libFaceRecognition-release.aar'))
+//    from(project.zipTree('aar/libTracker-release.aar'))
+
+//    include('aar/easylib-release.aar')
+//    include('aar/libFaceRecognition-release.aar')
+//    include('aar/libTracker-release.aar')
+}
+
+//def androidSourcesJar = file('easylib-release.aar')
+
+artifacts {
+//    archives file('aar/easylib-release.aar')
+//            ,'aar/libFaceRecognition-release.aar','aar/libTracker-release.aar')
+
+    archives androidSourcesJar
+}
+

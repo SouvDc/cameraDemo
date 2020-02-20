@@ -1,0 +1,45 @@
+<resources>
+
+
+    <!-- ActionSheet进出动画 -->
+
+    <style name="progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item> <!--Dialog的windowFrame框为无 -->
+        <item name="android:windowIsFloating">false</item><!-- 是否漂现在activity上 -->
+        <item name="android:windowIsTranslucent">true</item><!-- 是否半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 	      <item name="android:windowBackground">@drawable/loading_bg</item> -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <!-- 更换背景图片实现全透明 -->
+        <item name="android:windowBackground">@drawable/alert_light</item>
+        <!-- 屏幕背景不变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 隐藏标题 -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+        <!-- 对话框风格-->
+
+        <style name="TranslateView">
+            <item name="android:layout_width">wrap_content</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:background">@color/translate</item>
+            <item name="android:textColor">@color/white</item>
+        </style>
+
+    <style name="CompareButton" parent="TranslateView">
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:src">@drawable/bg_compare_button</item>
+        <item name="android:layout_gravity">right|bottom</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+</resources>

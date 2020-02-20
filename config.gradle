@@ -1,0 +1,127 @@
+ext {
+    common = [
+            opencvLibPath   : '../jniUtils/3rdparty/opencv/v3.4.0/lib',
+            AuthLibPath   : '../jniUtils/3rdparty/auth/v3.0.1/libs',
+            NLibPath   : '../jniUtils/3rdparty/n/n20180124/lib'
+    ]
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "27.0.3",
+            targerSdkVersion : 22,
+            minSdkVersion    : 19,
+    ]
+    signingConfigs = [
+            keyAlias        : 'aimall',
+            keyPassword     : 'aimall2018',
+            storePassword   : 'aimall2018',
+            storeFile       : file('key/aimall.jks')
+    ]
+    libTracker = [
+            minSdkVersion    : 14,
+            versionCode      : 201,
+            versionName      : "2.0.7",
+    ]
+    AppTracker = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.tracker",
+            versionCode      : 201,
+            versionName      : "2.0.7",
+    ]
+
+    libFaceAttribute = [
+            minSdkVersion    : 19,
+            versionCode      : 3,
+            versionName      : "2.0.6",
+    ]
+    AppFaceAttribute = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.demo.faceattribute",
+            versionCode      : 3,
+            versionName      : "2.0.6",
+    ]
+
+    libSr = [
+            minSdkVersion    : 19,
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+    AppSr = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.srandroid",
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+
+    libLive = [
+            minSdkVersion    : 19,
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+    AppLive = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.live",
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+
+    libActionLive = [
+            minSdkVersion    : 19,
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+    AppActionLive = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.demo.actionlive",
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+    libFaceRecognition = [
+            minSdkVersion    : 19,
+            versionCode      : 2,
+            versionName      : "2.1.1",
+    ]
+    AppFaceRecognition = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.demo.faceverification",
+            versionCode      : 2,
+            versionName      : "2.1.1",
+    ]
+    libPose = [
+            minSdkVersion    : 21,
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+    AppPose = [
+            minSdkVersion    : 21,
+            applicationId    : "com.aimall.pose",
+            versionCode      : 2,
+            versionName      : "2.0.4",
+    ]
+
+    libCPUPose = [
+            minSdkVersion    : 19,
+            versionCode      : 2,
+            versionName      : "2.0.5",
+    ]
+
+    AppCPUPose = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.demo.cpupose",
+            versionCode      : 2,
+            versionName      : "2.0.5",
+    ]
+
+    libDetector = [
+            minSdkVersion    : 19,
+            versionCode      : 2,
+            versionName      : "2.0.5",
+    ]
+    AppDectector = [
+            minSdkVersion    : 19,
+            applicationId    : "com.aimall.demo.detector",
+            versionCode      : 2,
+            versionName      : "2.0.5",
+    ]
+
+
+}

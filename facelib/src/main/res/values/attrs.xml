@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="USBCameraView">
+        <!--摄像头预览的宽-->
+        <attr name="preview_width" format="dimension"/>
+        <!--摄像头预览的高-->
+        <attr name="preview_height" format="dimension"/>
+        <!--转换格式-->
+        <attr name="pixel_format">
+            <enum name="MJPEG" value="0"/>
+            <enum name="YUYV" value="1"/>
+        </attr>
+
+
+
+
+    </declare-styleable>
+</resources>
